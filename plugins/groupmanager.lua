@@ -5,7 +5,7 @@ do
 local function create_group(msg)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
-        return "Hi For Creating Group Join Here↙️\https://telegram.me/joinchat/B4ghtgIvpYlMkBZTG57OhQn"
+        return "Hi For Creating Group You Have To Pay 2000 Tomans\nEACH MONTH\nFor Order Group Join↙️\nhttps://telegram.me/joinchat/B4ghtgIvpYlMkBZTG57OhQ"
     end
     local group_creator = msg.from.print_name
     create_group_chat (group_creator, group_name, ok_cb, false)
@@ -185,9 +185,11 @@ function run(msg, matches)
 	end
     local data = load_data(_config.moderation.data)
     local receiver = get_receiver(msg)
-    if msg.media then
-    	if msg.media.type == 'photo' and data[tostring(msg.to.id)]['settings']['set_photo'] == 'waiting' and is_chat_msg(msg) and is_momod(msg) then
-    		load_photo(msg.id, set_group_photo, msg)
+    if msg.media and is_chat_msg(msg) and is_momod(msg) then
+    	if msg.media.type == 'photo' and data[tostring(msg.to.id)] then
+    		if data[tostring(msg.to.id)]['settings']['set_photo'] == 'waiting' then
+    			load_photo(msg.id, set_group_photo, msg)
+    		end
     	end
     end
     if data[tostring(msg.to.id)] then
