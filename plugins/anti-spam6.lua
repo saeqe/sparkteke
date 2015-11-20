@@ -1,5 +1,5 @@
-local NUM_MSG_MAX = 6 -- Max number of messages per TIME_CHECK seconds
-local TIME_CHECK = 6
+local NUM_MSG_MAX = 4 -- Max number of messages per TIME_CHECK seconds
+local TIME_CHECK = 4
 
 local function kick_user(user_id, chat_id)
   local chat = 'chat#id'..chat_id
@@ -20,11 +20,11 @@ local function run (msg, matches)
     local hash = 'anti-flood:enabled:'..chat
     if matches[1] == 'enable' then
       redis:set(hash, true)
-      return 'AntiSpam is now 6'
+      return 'Spam Limit Is now 6'
     end
     if matches[1] == 'disable' then
       redis:del(hash)
-      return 'AntiSpam 6 dis'
+      return 'Spam limit is Not 6 now'
     end
   end
 end
@@ -49,7 +49,7 @@ local function pre_process (msg)
       if msgs > NUM_MSG_MAX then
         local receiver = get_receiver(msg)
         local user = msg.from.id
-        local text = 'User '..user..' is flooding'
+        local text = 'User '..user..' is Spaming I Will Fuck He/She'
         local chat = msg.to.id
 
         send_msg(receiver, text, ok_cb, nil)
@@ -60,9 +60,9 @@ local function pre_process (msg)
         elseif is_sudo(msg) then
           print('I won\'t kick an admin!')
         else
-          -- Ban user
-          -- TODO: Check on this plugin bans
-          local bhash = 'banned:'..msg.to.id..':'..msg.from.id
+          -- kick user
+          -- TODO: Check on this plugin kicks
+          local bhash = 'kicked:'..msg.to.id..':'..msg.from.id
           redis:set(bhash, true)
           kick_user(user, chat)
         end
