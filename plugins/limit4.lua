@@ -20,11 +20,11 @@ local function run (msg, matches)
     local hash = 'anti-flood:enabled:'..chat
     if matches[1] == 'enable' then
       redis:set(hash, true)
-      return 'Anti-flood enabled on chat'
+      return 'limitisnow4'
     end
     if matches[1] == 'disable' then
       redis:del(hash)
-      return 'Anti-flood disabled on chat'
+      return 'limitstoped'
     end
   end
 end
@@ -78,8 +78,8 @@ return {
   description = 'Plugin to kick flooders from group.',
   usage = {},
   patterns = {
-    '^!limit1 (enable)$',
-    '^!limit1 (disable)$'
+    '^!limit4$',
+    '^!limit4$'
   },
   run = run,
   privileged = true,
