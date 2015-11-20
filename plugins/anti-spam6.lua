@@ -20,11 +20,11 @@ local function run (msg, matches)
     local hash = 'anti-flood:enabled:'..chat
     if matches[1] == 'enable' then
       redis:set(hash, true)
-      return 'Anti-flood enabled on chat'
+      return 'AntiSpam is now 6'
     end
     if matches[1] == 'disable' then
       redis:del(hash)
-      return 'Anti-flood disabled on chat'
+      return 'AntiSpam 6 dis'
     end
   end
 end
