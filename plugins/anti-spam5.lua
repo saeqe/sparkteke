@@ -24,7 +24,7 @@ local function run (msg, matches)
     end
     if matches[1] == 'disable' then
       redis:del(hash)
-      return 'Anti-flood disabled on chat'
+      return 'Spam limit is Now 5'
     end
   end
 end
@@ -78,8 +78,8 @@ return {
   description = 'Plugin to kick flooders from group.',
   usage = {},
   patterns = {
-    '^!aantiflood (enable)$',
-    '^!aantiflood (disable)$'
+    '^!antiflood5 (enable)$',
+    '^!antiflood5 (disable)$'
   },
   run = run,
   privileged = true,
