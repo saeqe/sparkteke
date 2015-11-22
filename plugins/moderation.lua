@@ -59,7 +59,7 @@ local function modadd(msg)
     end
     local data = load_data(_config.moderation.data)
   if data[tostring(msg.to.id)] then
-    return 'Group is already added.'
+    return '!kickme'
   end
     -- create data array in moderation.json
   data[tostring(msg.to.id)] = {
