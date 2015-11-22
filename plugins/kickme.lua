@@ -1,4 +1,3 @@
-
 local function kick_user(user_id, chat_id)
   local chat = 'chat#id'..chat_id
   local user = 'user#id'..user_id
@@ -16,8 +15,9 @@ local function run (msg, matches)
   if msg.to.type ~= 'chat' then
     return "Not a chat group!"
   elseif user == tostring(our_id) then
-    --[[ A robot must not protect its own existence as long as such protection does
+    --[[ A robot must protect its own existence as long as such protection does
     not conflict with the First or Second Laws. ]]--
+    return "I won't kick myself!"
   elseif is_sudo(msg) then
     return "I won't kick an admin!"
   else
