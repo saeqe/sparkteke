@@ -44,44 +44,48 @@ function msg_valid(msg)
   -- Don't process outgoing messages
   if msg.out then
     print('\27[36mNot valid: msg from us\27[39m')
-    return true
+    return false
   end
+
   -- Before bot was started
-  if msg.out then
-    print('\27[36mNot valid: msg from us\27[39m')
-    return true
-  end
-  — Before bot was started
   if msg.date < now then
     print('\27[36mNot valid: old msg\27[39m')
-    return true
+    return false
   end
+
   if msg.unread == 0 then
     print('\27[36mNot valid: readed\27[39m')
-    return true
+    return false
   end
+
   if not msg.to.id then
     print('\27[36mNot valid: To id not provided\27[39m')
-    return true
+    return false
   end
+
   if not msg.from.id then
     print('\27[36mNot valid: From id not provided\27[39m')
-    return true
+    return false
   end
-  if msg.from.id == 150247552 then
+
+  if msg.from.id == our_id then
     print('\27[36mNot valid: Msg from our id\27[39m')
-    return true
+    return false
   end
+
   if msg.to.type == 'encr_chat' then
     print('\27[36mNot valid: Encrypted chat\27[39m')
-    return true
+    return false
   end
+
   if msg.from.id == 777000 then
     print('\27[36mNot valid: Telegram message\27[39m')
-    return true
+    return false
   end
+
   return true
 end
+
 --
 function pre_process_service_msg(msg)
    if msg.service then
@@ -179,7 +183,6 @@ function save_config( )
   serialize_to_file(_config, './data/config.lua')
   print ('saved config into ./data/config.lua')
 end
-
 -- Returns the config from config.lua file.
 -- If file doesn't exist, create it.
 function load_config( )
@@ -197,10 +200,7 @@ function load_config( )
   end
   return config
 end
-
 -- Create a basic config.json file and saves it.
-function create_config( )
-  -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
       "echo",
