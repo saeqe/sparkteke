@@ -48,7 +48,7 @@ local function automodadd(msg)
               }
           }
       save_data(_config.moderation.data, data)
-      return 'Don't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\n!kickme'
+      return ' Don't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\nDon't Add Me To your Shitty Groups\n!kickme bv'
    end
 end
 
