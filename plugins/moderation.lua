@@ -18,7 +18,7 @@ local function check_member(cb_extra, success, result)
                   }
             }
           save_data(_config.moderation.data, data)
-          return send_large_msg(receiver, '!kickme')
+          return send_large_msg(receiver, 'you Promoted(SmartGroup)Created!')
       end
     end
 end
