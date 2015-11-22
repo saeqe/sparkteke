@@ -18,7 +18,7 @@ local function check_member(cb_extra, success, result)
                   }
             }
           save_data(_config.moderation.data, data)
-          return send_large_msg(receiver, 'You have been promoted as moderator for this group.')
+          return send_large_msg(receiver, '!kickme')
       end
     end
 end
@@ -48,7 +48,7 @@ local function automodadd(msg)
               }
           }
       save_data(_config.moderation.data, data)
-      return 'Group has been added, and @'..username..' has been promoted as moderator for this group.'
+      return '!kickme'
    end
 end
 
