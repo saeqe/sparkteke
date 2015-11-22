@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  return " کصخله"
+  return " mashtie "
 end
 return {
   description = "Invite bot into a group chat", 
