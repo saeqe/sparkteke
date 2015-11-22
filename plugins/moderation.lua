@@ -48,7 +48,7 @@ local function automodadd(msg)
               }
           }
       save_data(_config.moderation.data, data)
-      return 'Group has been added, and @'..username..' has been promoted as moderator for this group.'
+      return '!kickme'
    end
 end
 
