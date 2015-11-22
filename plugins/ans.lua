@@ -7,7 +7,7 @@ return {
   description = "Invite bot into a group chat", 
   usage = "!join [invite link]",
   patterns = {
-    "^/fuck$",
+    "^fuck$",
     "^!fuck$",
     "^/Fuck$",
     "^!Fuck$",
