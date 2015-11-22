@@ -183,6 +183,7 @@ function save_config( )
   serialize_to_file(_config, './data/config.lua')
   print ('saved config into ./data/config.lua')
 end
+
 -- Returns the config from config.lua file.
 -- If file doesn't exist, create it.
 function load_config( )
@@ -200,13 +201,14 @@ function load_config( )
   end
   return config
 end
+
 -- Create a basic config.json file and saves it.
+function create_config( )
+  -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
       "echo",
       "get",
-      "Fake",
-      "IrArman",
       "google",
       "groupmanager",
       "help",
