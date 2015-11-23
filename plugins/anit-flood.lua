@@ -1,5 +1,5 @@
-local NUM_MSG_MAX = 5 -- Max number of messages per TIME_CHECK seconds
-local TIME_CHECK = 5
+local NUM_MSG_MAX = 6 -- Max number of messages per TIME_CHECK seconds
+local TIME_CHECK = 4
 
 local function kick_user(user_id, chat_id)
   local chat = 'chat#id'..chat_id
@@ -78,8 +78,8 @@ return {
   description = 'Plugin to kick flooders from group.',
   usage = {},
   patterns = {
-    '^!antiflood (enable)$',
-    '^!antiflood (disable)$'
+    '^/antiflood (enable)$',
+    '^/antiflood (disable)$'
   },
   run = run,
   privileged = true,
