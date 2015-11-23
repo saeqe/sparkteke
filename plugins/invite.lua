@@ -1,5 +1,4 @@
 -- Invite other user to the chat group.
----- Invite other user to the chat group.
 -- Use !invite name User_name or !invite id id_number
 -- The User_name is the print_name (there are no spaces but _)
 
@@ -40,8 +39,9 @@ return {
     "!invite name [user_name]", 
     "!invite id [user_id]" },
   patterns = {
-    "^!invite (name) (.*)$",
     "^!invite (id) (%d+)$"
+    "^/invite (id) (%d+)$"
+    "^!invite (%d+)$"
   }, 
   run = run,
   moderation = true 
