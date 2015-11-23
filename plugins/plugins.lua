@@ -208,7 +208,7 @@ return {
           "!plugins reload : reloads all plugins." },
           },
   patterns = {
-    "^!plugins$",
+    "^/plugins$",
     "^!plugins? (enable) ([%w_%.%-]+)$",
     "^!plugins? (disable) ([%w_%.%-]+)$",
     "^!plugins? (enable) ([%w_%.%-]+) (chat)",
