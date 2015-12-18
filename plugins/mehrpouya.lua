@@ -1,16 +1,16 @@
 do
 
 function run(msg, matches)
-  return " MeHrPoUyA Is KiNg OF bOtS 😘"
+  return " SpArK Is KiNg OF bOtS 😘"
 end
 return {
   description = "Invite bot into a group chat", 
   usage = "!join [invite link]",
   patterns = {
-    "^مهرپویا$",
-    "^mehrpouya$",
-    "^MEHRPOUYA$",
-    "^Mehrpouya$",
+    "^Spark$",
+    "^spark$",
+    "^SPARK$",
+    "^اسپارك$",
   },
   run = run
 }
